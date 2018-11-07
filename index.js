@@ -7,8 +7,11 @@ var server = app.listen(3000, function(){
   console.log('listening to port 3000');
 });
 
+// set up voew engine
+app.set('view engine', 'ejs');
+
 // Static files
-app.use(express.static('public'));
+app.use('/public', express.static('public'));
 
 //Socket setup
 var io = socket(server);
@@ -21,4 +24,9 @@ io.on('connection', function (socket){
   socket.on('typing', function(data){
     socket.broadcast.emit('typing', data);
   });
+});
+
+// create home route
+app.get('/', (req, res) =>{
+  res.render('home', {user: req.user});
 });
