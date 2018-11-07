@@ -1,5 +1,6 @@
 var express = require('express');
 var socket = require('socket.io');
+const authRoutes = require('./routes/auth-routes');
 
 // App setup
 var app = express();
@@ -12,6 +13,9 @@ app.set('view engine', 'ejs');
 
 // Static files
 app.use('/public', express.static('public'));
+
+// set up routes
+app.use('/auth', authRoutes);
 
 //Socket setup
 var io = socket(server);
