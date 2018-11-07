@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Apna Chat</title>
-        <link rel="stylesheet" href="/public/styles.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
-    </head>
-    <body>
-        <nav>
-            <ul>
-              <% if (user) { %>
-              <li><a href="/auth/logout">Log out</a></li>
-              <% } else { %>
-              <li><a href="/auth/login">Login</a></li>
-              <% } %>
-              <li><a href="/">Home</a></li>
-              <% if (user) { %>
-              <li><a href="/profile">Profile</a></li>
-              <% } %>
-            </ul>
-        </nav>
-        <header>
-            <h1>Apna Chat</h1>
-            <h2>Homepage</h2>
-        </header>
-        <main>
-            <p>An open sourced chat app made by PrP-11</p>
-        </main>
-          <div id="my-chat">
-            <div id="chat-window">
-              <div id="output"></div>
-              <div id="feedback"></div>
-            </div>
-            <input id="handle" type="text" placeholder="Handle">
-            <input id="message" type="text" placeholder="Message">
-            <button id="send">Send</button>
-
-          </div>
-        <script type="text/javascript" src="/public/chat.js"></script>
-    </body>
+  <head>
+      <meta charset="utf-8">
+      <title>Apna Chat</title>
+      <link rel="stylesheet" href="/public/styles.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+  </head>
+  <body>
+    <% include partials/nav.ejs %>
+    <header>
+      <h1>Apna Chat</h1>
+      <h2>Homepage</h2>
+    </header>
+    <main>
+      <p>An open sourced chat app made by PrP-11</p>
+    </main>
+    <div id="my-chat">
+      <div id="chat-window">
+        <div id="output"></div>
+        <div id="feedback"></div>
+      </div>
+      <input id="handle" type="text" placeholder="Handle">
+      <input id="message" type="text" placeholder="Message">
+      <button id="send">Send</button>
+    </div>
+    <script type="text/javascript" src="/public/chat.js"></script>
+  </body>
 </html>
