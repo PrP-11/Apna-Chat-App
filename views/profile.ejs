@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Apna Chat</title>
+        <link rel="stylesheet" href="/public/styles.css">
+    </head>
+    <body>
+        <% include partials/nav.ejs %>
+        <header>
+            <h1>Welcome to your profile, <%= user.username%></h1>
+        </header>
+        <main>
+          <img src="<%= user.thumbnail %>" />
+        </main>
+    </body>
+</html>
